@@ -47,7 +47,7 @@ const mapStateToProps = (state /*, ownProps*/) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onTest: key => dispatch({ type: "test", key })
+    onTest: key => dispatch({ type: "USER_FETCH_REQUESTED", key })
   };
 };
 

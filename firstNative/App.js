@@ -5,13 +5,8 @@
  * @format
  * @flow
  */
-import Reactotron from 'reactotron-react-native'
-
-if(__DEV__) {
-  import('./reactotronConfig').then(() => console.log('Reactotron Configured'))
-}
 import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View } from "react-native";
+import { Platform, StyleSheet, NativeModules} from "react-native";
 import { Provider } from "react-redux";
 import store from "./store/index";
 import Index from "./pages/index";
@@ -21,7 +16,14 @@ const instructions = Platform.select({
     "Double tap R on your keyboard to reload,\n" +
     "Shake or press menu button for dev menu"
 });
+if (__DEV__) {
+  NativeModules.DevSettings.setIsDebuggingRemotely(true)
+}
 
+// For RN < 0.43
+if (__DEV__) {
+  NativeModules.DevMenu.debugRemotely(true)
+}
 export default class App extends Component {
   render() {
     return (

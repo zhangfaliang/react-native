@@ -5,13 +5,19 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "lint": "eslint"
+    "lint": "eslint",
+    "postinstall": "rndebugger-open"
   },
   "dependencies": {
+    "add": "^2.0.6",
     "react": "16.8.3",
     "react-native": "0.59.2",
+    "react-native-debugger": "^1.1.0",
     "react-redux": "^6.0.1",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-saga": "^1.0.2",
+    "save": "^2.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
@@ -21,10 +27,8 @@
     "eslint": "^5.15.3",
     "jest": "^24.5.0",
     "metro-react-native-babel-preset": "^0.53.1",
-    "react-test-renderer": "16.8.3",
-    "reactotron-react-native": "^3.2.1",
-    "reactotron-redux": "^3.1.0",
-    "reactotron-redux-saga": "^4.2.1"
+    "react-native-debugger-open": "^0.3.19",
+    "react-test-renderer": "16.8.3"
   },
   "jest": {
     "preset": "react-native"
