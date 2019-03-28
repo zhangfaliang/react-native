@@ -8,7 +8,7 @@
     <br/>
     * [react-redux](https://github.com/reduxjs/react-redux)<br/>
     * [react-saga](https://github.com/reduxjs/react-redux)<br/>
-    * [react-select](https://github.com/JedWatson/react-select)<br/>
+    * [reselect](https://github.com/reduxjs/reselect)<br/>
     * [React Native Debugger](https://github.com/jhen0409/react-native-debugger)<br/>
 
 <h3>文件目录</h3> <br/>

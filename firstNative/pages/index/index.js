@@ -1,5 +1,7 @@
 import React, { PureComponent } from "react";
 import { connect } from "react-redux";
+import { createStructuredSelector } from 'reselect';
+import { makeAllTest } from '../../selectors/index';
 import { View, Text, StyleSheet, Button, NativeModules } from "react-native";
 
 class Index extends PureComponent {
@@ -39,11 +41,10 @@ const styles = StyleSheet.create({
   }
 });
 
-const mapStateToProps = (state /*, ownProps*/) => {
-  return {
-    test: state.test
-  };
-};
+const mapStateToProps = createStructuredSelector({
+    test:makeAllTest
+})
+
 
 const mapDispatchToProps = dispatch => {
   return {
