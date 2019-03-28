@@ -11,7 +11,7 @@ class Index extends PureComponent {
       <View style={styles.container}  >
         <Button
           onPress={this.handlePress}
-          title="click me"
+          title="click me !!!!"
           color="#841584"
           accessibilityLabel="Learn more about this purple button"
         />
