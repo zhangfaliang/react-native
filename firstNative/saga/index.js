@@ -10,8 +10,8 @@ const promise = timeout =>
 function* fetchUser(action) {
   try {
     const user = yield call(promise, 1000);
-    yield put({type:'test',key:user.succeed})
-    console.log(user);
+    yield put({type:'test',key:action.key})
+    console.log(action.key);
   } catch (e) {}
 }
 

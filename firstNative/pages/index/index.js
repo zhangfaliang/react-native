@@ -6,14 +6,16 @@ import { View, Text, StyleSheet, Button, NativeModules } from "react-native";
 
 class Index extends PureComponent {
   handlePress = () => {
-      this.props.onTest('click me!!!😁');
+      this.props.onTest(' you clicked !!!😁');
   };
   render() {
+      const { allTest } =this.props;
+      const { test } = allTest||{}
     return (
       <View style={styles.container}  >
         <Button
           onPress={this.handlePress}
-          title="click me !!!!"
+          title={test.key}
           color="#841584"
           accessibilityLabel="Learn more about this purple button"
         />
@@ -42,7 +44,7 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = createStructuredSelector({
-    test:makeAllTest
+    allTest:makeAllTest
 })
 
 

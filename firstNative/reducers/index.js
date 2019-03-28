@@ -1,5 +1,5 @@
 const initTest = {
-  key: "shiny"
+  key: "click me!!"
 };
 export const test = (state = initTest, action) => {
   switch (action.type) {
