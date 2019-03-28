@@ -11,19 +11,13 @@ import { Provider } from "react-redux";
 import store from "./store/index";
 import Index from "./pages/index";
 const instructions = Platform.select({
-  ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
-  android:
-    "Double tap R on your keyboard to reload,\n" +
-    "Shake or press menu button for dev menu"
+  ios: ()=>{
+    if (__DEV__) {
+      NativeModules.DevSettings.setIsDebuggingRemotely(true)
+    }
+  },
+  android:''
 });
-if (__DEV__) {
-  NativeModules.DevSettings.setIsDebuggingRemotely(true)
-}
-
-// For RN < 0.43
-if (__DEV__) {
-  NativeModules.DevMenu.debugRemotely(true)
-}
 export default class App extends Component {
   render() {
     return (
