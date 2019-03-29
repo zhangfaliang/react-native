@@ -6,43 +6,22 @@
  * @flow
  */
 import React, { Component } from "react";
-import { Platform, StyleSheet, NativeModules} from "react-native";
 import { Provider } from "react-redux";
 import store from "./store/index";
-import Index from "./pages/index";
-const instructions = Platform.select({
-  ios: ()=>{
-    if (__DEV__) {
-      NativeModules.DevSettings.setIsDebuggingRemotely(true)
-    }
-  },
-  android:''
-});
+import Route from "./routers/route";
+
 export default class App extends Component {
+  handleNavigationChange = (prevState, newState, action) => {
+    console.log("NavigationChange -------------------");
+  };
   render() {
     return (
       <Provider store={store}>
-        <Index />
+        <Route
+          onNavigationStateChange={this.handleNavigationChange}
+          uriPrefix="/app"
+        />
       </Provider>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF"
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: "center",
-    margin: 10
-  },
-  instructions: {
-    textAlign: "center",
-    color: "#333333",
-    marginBottom: 5
-  }
-});
